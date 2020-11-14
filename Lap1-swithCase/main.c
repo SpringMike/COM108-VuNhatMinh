@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main()
 {
@@ -7,6 +8,7 @@ int main()
     int choice;
     int num1, num2, num3, num4;
     long numberCheck;
+    int reads;
     do
     {
         printf("------------------------------------------------------\n");
@@ -16,14 +18,28 @@ int main()
         printf("4. Kiem tra so vao la so duong hay so am\n");
         printf("5. Kiem tra diem thi de biet co hoc lai hay khong\n");
         printf("------------------------------------------------------\n");
-        printf("press anything to exit !\n");
+        printf("Bam so khac de exit !\n");
         printf("Ban chon lam gi ?\n");
-        scanf("%d", &choice);
+        reads = scanf("%d", &choice);
+        while (reads != 1)
+
+        {
+            printf("ban da nhap sai kieu ky tu!\nMoi ban nhap lai\n");
+            getchar();
+            reads = scanf("%d", &choice);
+        }
         switch (choice)
         {
         case 1:
             printf("nhap gpa : ");
-            scanf("%f", &gpa);
+            reads = scanf("%f", &gpa);
+            while (reads != 1)
+            {
+                printf("ban da nhap sai kieu ky tu!\nMoi ban nhap lai\n");
+                getchar();
+                reads = scanf("%f", &gpa);
+            }
+
             while (gpa <= 0 || gpa > 5)
             {
                 printf("khong hop le, nhap lai diem: \n");
@@ -56,7 +72,13 @@ int main()
             break;
         case 3:
             printf("Nhap so can check: ");
-            scanf("%ld", &numberCheck);
+            reads = scanf("%ld", &numberCheck);
+            while (reads != 1)
+            {
+                printf("ban da nhap sai kieu ky tu!\nMoi ban nhap lai\n");
+                getchar();
+                reads = scanf("%ld", &numberCheck);
+            }
             while (numberCheck <= 0)
             {
                 printf("khong hop le, nhap lai: \n");
@@ -73,7 +95,13 @@ int main()
             break;
         case 4:
             printf("Nhap so can check: ");
-            scanf("%ld", &numberCheck);
+            reads = scanf("%ld", &numberCheck);
+            while (reads != 1)
+            {
+                printf("ban da nhap sai kieu ky tu!\nMoi ban nhap lai\n");
+                getchar();
+                reads = scanf("%ld", &numberCheck);
+            }
             if (numberCheck < 0)
             {
                 printf("%ld la so nguyen am \n", numberCheck);
@@ -89,7 +117,13 @@ int main()
             break;
         case 5:
             printf("nhap gpa : ");
-            scanf("%f", &gpa);
+            reads = scanf("%d", &gpa);
+            while (reads != 1)
+            {
+                printf("ban da nhap sai kieu ky tu!\nMoi ban nhap lai\n");
+                getchar();
+                reads = scanf("%f", &gpa);
+            }
             while (gpa <= 0 || gpa >= 10)
             {
                 printf("khong hop le, nhap lai diem: \n");

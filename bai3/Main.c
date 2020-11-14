@@ -2,64 +2,48 @@
 
 void bai1()
 {
-    float diem;
-    int flaged = 0;
-    int choice;
     int a;
-    int b;
+    scanf("%d", &a);
+    while (a <= 0 || a >= 100)
+    {
+        printf("khong hop le\n");
+        scanf("%d", &a);
+    }
+}
+void bai3() //vong lap for
+{
+    int a;
+    int mul;
+    printf("Nhap so: ");
+    scanf("%d", &a);
+    for (int i = 1; i <= 10; i++)
+    {
+        // mul = a * i;
+        // printf("%d * %d = %d ; ", a, i, mul);
+        for (int j = 1; j <= 10; j++)
+        {
+            mul = i * j;
+            printf("%d * %d = %d ; ", i, j, mul);
+            printf("\n");
+        }
+    }
+}
+void bai4()
+{ //vong lap while
+    int a;
+    int mul;
+    int count = 1;
+    printf("nhap so: ");
+    scanf("%d", &a);
     do
     {
-        printf("1. Xep hang mon\n");
-        printf("2. Chuong trinh cong 3 so\n");
-        printf("3. Chuong trinh nhan 4 so\n");
-        printf("4. Chuong trinh tru 5 so\n");
-        printf("nhap so khac de thoat\n");
-        scanf("%d", &choice);
-
-        switch (choice)
-        {
-        case 1:
-            printf("nhap diem cua ban: ");
-            scanf("%f", &diem);
-            if (diem < 5)
-            {
-                printf("Hoc lai");
-            }
-            else if (diem < 8 && diem > 5)
-            {
-                printf("kha");
-            }
-            else
-            {
-                printf("Gioi");
-            }
-
-            break;
-        case 2:
-
-            printf("nhap 2 so: ");
-            scanf("%d%d", &a, &b);
-            printf("%d + %d = %d ", a, b, a + b);
-            break;
-        case 3:
-            printf("nhap 2 so: ");
-            scanf("%d%d", &a, &b);
-            printf("%d * %d = %d ", a, b, a * b);
-            break;
-        case 4:
-            printf("nhap 2 so: ");
-            scanf("%d%d", &a, &b);
-            printf("%d - %d = %d ", a, b, a - b);
-            break;
-        default:
-            flaged = 1;
-            break;
-        }
-
-    } while (flaged = 0);
+        mul = a * count;
+        printf("%d * %d = %d; \n", a, count, mul);
+        count++;
+    } while (count <= 10);
 }
 
 int main()
 {
-    bai1();
+    bai4();
 }
